@@ -1,4 +1,5 @@
 {
+  "taskDefinitionArn": "arn:aws:ecs:eu-north-1:762233768038:task-definition/b-log-task-def:1",
   "containerDefinitions": [
     {
       "name": "log-blog",
@@ -6,7 +7,7 @@
       "cpu": 0,
       "portMappings": [
         {
-          "name": "log-blog-80-tcp",
+          "name": "log-blog-80",
           "containerPort": 80,
           "hostPort": 80,
           "protocol": "tcp",
@@ -14,7 +15,16 @@
         }
       ],
       "essential": true,
-      "environment": [],
+      "environment": [
+        {
+          "name": "PORT",
+          "value": "80"
+        },
+        {
+          "name": "HOST",
+          "value": "0.0.0.0"
+        }
+      ],
       "environmentFiles": [],
       "mountPoints": [],
       "volumesFrom": [],
@@ -22,7 +32,7 @@
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
-          "awslogs-group": "/ecs/b-log-task-defenition",
+          "awslogs-group": "/ecs/",
           "mode": "non-blocking",
           "awslogs-create-group": "true",
           "max-buffer-size": "25m",
@@ -34,11 +44,37 @@
       "systemControls": []
     }
   ],
-  "family": "b-log-task-defenition",
+  "family": "b-log-task-def",
   "executionRoleArn": "arn:aws:iam::762233768038:role/ecsTaskExecutionRole",
   "networkMode": "awsvpc",
+  "revision": 1,
   "volumes": [],
+  "status": "ACTIVE",
+  "requiresAttributes": [
+    {
+      "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+    },
+    {
+      "name": "ecs.capability.execution-role-awslogs"
+    },
+    {
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+    },
+    {
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.28"
+    },
+    {
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+    },
+    {
+      "name": "ecs.capability.task-eni"
+    },
+    {
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+    }
+  ],
   "placementConstraints": [],
+  "compatibilities": ["EC2", "FARGATE"],
   "requiresCompatibilities": ["FARGATE"],
   "cpu": "1024",
   "memory": "3072",
@@ -46,5 +82,8 @@
     "cpuArchitecture": "X86_64",
     "operatingSystemFamily": "LINUX"
   },
+  "registeredAt": "2024-10-30T16:56:24.477Z",
+  "registeredBy": "arn:aws:iam::762233768038:root",
+  "enableFaultInjection": false,
   "tags": []
 }
