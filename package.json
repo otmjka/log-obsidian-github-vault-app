@@ -4,7 +4,11 @@
   "main": "index.js",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev-nextjs": "next dev",
+    "build-nextjs": "next build",
+    "start-nextjs": "next start",
+    "lint-nextjs": "next lint"
   },
   "keywords": [],
   "author": "",
@@ -22,12 +26,16 @@
     "endOfLine": "lf"
   },
   "devDependencies": {
-    "@types/node": "^22.8.4",
+    "@types/react": "18.3.12",
     "prettier": "^3.3.3",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.6.3"
   },
   "dependencies": {
-    "fastify": "^5.0.0"
+    "gray-matter": "^4.0.3",
+    "next": "^15.0.2",
+    "next-mdx-remote": "^5.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }
