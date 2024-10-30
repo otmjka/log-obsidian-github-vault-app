@@ -1,10 +1,11 @@
 {
-  "taskDefinitionArn": "arn:aws:ecs:eu-north-1:762233768038:task-definition/blog-td:1",
+  "taskDefinitionArn": "arn:aws:ecs:eu-north-1:762233768038:task-definition/b-log-tf-0000:1",
   "containerDefinitions": [
     {
       "name": "log-blog",
       "image": "akjmto/log-blog:latest",
       "cpu": 0,
+      "memory": 1024,
       "portMappings": [
         {
           "name": "log-blog-3000-tcp",
@@ -23,7 +24,7 @@
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
-          "awslogs-group": "/ecs/",
+          "awslogs-group": "/ecs/b-log-tf-0000",
           "mode": "non-blocking",
           "awslogs-create-group": "true",
           "max-buffer-size": "25m",
@@ -35,7 +36,7 @@
       "systemControls": []
     }
   ],
-  "family": "blog-td",
+  "family": "b-log-tf-0000",
   "executionRoleArn": "arn:aws:iam::762233768038:role/ecsTaskExecutionRole",
   "networkMode": "awsvpc",
   "revision": 1,
@@ -67,13 +68,13 @@
   "placementConstraints": [],
   "compatibilities": ["EC2", "FARGATE"],
   "requiresCompatibilities": ["FARGATE"],
-  "cpu": "1024",
-  "memory": "3072",
+  "cpu": "512",
+  "memory": "1024",
   "runtimePlatform": {
     "cpuArchitecture": "X86_64",
     "operatingSystemFamily": "LINUX"
   },
-  "registeredAt": "2024-10-30T17:06:46.534Z",
+  "registeredAt": "2024-10-30T17:37:15.263Z",
   "registeredBy": "arn:aws:iam::762233768038:root",
   "tags": []
 }

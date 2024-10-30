@@ -20,7 +20,7 @@ env:
   AWS_REGION: eu-north-1
   ECR_REPOSITORY: akjmto/log-blog
   ECS_SERVICE: log-blog
-  ECS_CLUSTER: auth-back-cluster
+  ECS_CLUSTER: dvCluster
   ECS_TASK_DEFINITION: task-definition.json
   CONTAINER_NAME: log-blog
 jobs:
@@ -53,12 +53,12 @@ jobs:
           # Build a docker container and
           # push it to ECR so that it can
           # be deployed to ECS.
-          docker compose -f docker/production/compose.yaml build 
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker images
           echo aaa
           echo $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo bbb
-          docker tag production-log-blog:latest $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
