@@ -1,13 +1,11 @@
 {
-  "requiresCompatibilities": ["FARGATE"],
-  "family": "log-blog-definition",
   "containerDefinitions": [
     {
       "name": "log-blog",
       "image": "akjmto/log-blog:latest",
       "portMappings": [
         {
-          "name": "log-blog-80-tcp",
+          "name": "log-blog-3000",
           "containerPort": 3000,
           "hostPort": 3000,
           "protocol": "tcp",
@@ -17,9 +15,12 @@
       "essential": true
     }
   ],
-  "volumes": [],
+  "family": "log-blog-task-defenition",
+  "executionRoleArn": "arn:aws:iam::762233768038:role/ecsTaskExecutionRole",
   "networkMode": "awsvpc",
-  "memory": "3 GB",
-  "cpu": "1 vCPU",
-  "executionRoleArn": "arn:aws:iam::762233768038:role/ecsTaskExecutionRole"
+  "volumes": [],
+
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "1024",
+  "memory": "3072"
 }
