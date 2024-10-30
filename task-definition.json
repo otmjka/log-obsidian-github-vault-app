@@ -1,6 +1,6 @@
 {
   "requiresCompatibilities": ["FARGATE"],
-  "family": "auth-back-task-definition",
+  "family": "log-blog-definition",
   "containerDefinitions": [
     {
       "name": "log-blog",
