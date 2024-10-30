@@ -1,5 +1,4 @@
 {
-  "taskDefinitionArn": "arn:aws:ecs:eu-north-1:762233768038:task-definition/b-log-task-defenition:1",
   "containerDefinitions": [
     {
       "name": "log-blog",
@@ -38,32 +37,7 @@
   "family": "b-log-task-defenition",
   "executionRoleArn": "arn:aws:iam::762233768038:role/ecsTaskExecutionRole",
   "networkMode": "awsvpc",
-  "revision": 1,
   "volumes": [],
-  "status": "ACTIVE",
-  "requiresAttributes": [
-    {
-      "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
-    },
-    {
-      "name": "ecs.capability.execution-role-awslogs"
-    },
-    {
-      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
-    },
-    {
-      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.28"
-    },
-    {
-      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
-    },
-    {
-      "name": "ecs.capability.task-eni"
-    },
-    {
-      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
-    }
-  ],
   "placementConstraints": [],
   "requiresCompatibilities": ["FARGATE"],
   "cpu": "1024",
