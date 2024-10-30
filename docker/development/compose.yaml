@@ -1,8 +1,7 @@
 services:
-  with-docker-multi-env-development:
+  log-blog:
     build:
       context: ../../
       dockerfile: docker/development/Dockerfile
-    image: with-docker-multi-env-development
     ports:
-      - '3001:3000'
+      - '3000:3000'

@@ -1,0 +1,25 @@
+{
+  "requiresCompatibilities": ["FARGATE"],
+  "family": "auth-back-task-definition",
+  "containerDefinitions": [
+    {
+      "name": "log-blog",
+      "image": "akjmto/log-blog:latest",
+      "portMappings": [
+        {
+          "name": "log-blog-80-tcp",
+          "containerPort": 3000,
+          "hostPort": 3000,
+          "protocol": "tcp",
+          "appProtocol": "http"
+        }
+      ],
+      "essential": true
+    }
+  ],
+  "volumes": [],
+  "networkMode": "awsvpc",
+  "memory": "3 GB",
+  "cpu": "1 vCPU",
+  "executionRoleArn": "arn:aws:iam::762233768038:role/ecsTaskExecutionRole"
+}
