@@ -5,9 +5,9 @@
       "image": "akjmto/log-blog:latest",
       "portMappings": [
         {
-          "name": "log-blog-3000",
-          "containerPort": 3000,
-          "hostPort": 3000,
+          "name": "log-blog-80",
+          "containerPort": 80,
+          "hostPort": 80,
           "protocol": "tcp",
           "appProtocol": "http"
         }

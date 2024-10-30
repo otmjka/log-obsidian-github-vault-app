@@ -4,4 +4,4 @@ services:
       context: ../../
       dockerfile: docker/production/Dockerfile
     ports:
-      - '3000:3000'
+      - 80:80
