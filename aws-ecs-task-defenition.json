@@ -16,6 +16,10 @@
         {
           "name": "PORT",
           "value": "80"
+        },
+        {
+          "name": "HOSTNAME",
+          "value": "0.0.0.0"
         }
       ],
       "mountPoints": [],
