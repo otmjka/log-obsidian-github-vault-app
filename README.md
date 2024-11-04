@@ -1,8 +1,11 @@
 # Log Obsidian Github vauld app
 
-log app uses github + obsidian as vault of articles
-md parser
-next.js for frontend
+[b-log app link](http://b-log-app-load-balancer-1189058679.eu-north-1.elb.amazonaws.com/)
+
+Idea is write notes in the obsidian.
+In obsidian vault init github repository.
+And dummy Next.js app that read file names from a repo.
+and show items by mdx component.
 
 https://api.github.com/repos/otmjka/log-content/git/trees/main?recursive=1
 
@@ -11,14 +14,8 @@ https://api.github.com/repos/otmjka/log-content/git/trees/main?recursive=1
 https://nextjs.org/docs/app/building-your-application/deploying#docker-image
 
 ```
-docker compose -f docker/development/compose.yaml up
-docker compose -f docker/production/compose.yaml up
-
 docker build -t b-log .
 docker build --platform=linux/amd64 -t b-log .
 docker run -e PORT=80 -p 80:80 b-log:latest
+
 ```
-
-## issues
-
---platform=linux/amd64
