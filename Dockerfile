@@ -1,4 +1,4 @@
-FROM node:20-alpine AS base
+FROM FROM --platform=linux/amd64 node:20-alpine AS base
 
 # Install dependencies only when needed
 FROM base AS deps
@@ -56,7 +56,6 @@ RUN chown nextjs:nodejs .next
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
-USER nextjs
 
 ARG PORT
 ENV PORT=$PORT
