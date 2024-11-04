@@ -1,4 +1,4 @@
-FROM FROM --platform=linux/amd64 node:20-alpine AS base
+FROM --platform=linux/amd64 node:20-alpine AS base
 
 # Install dependencies only when needed
 FROM base AS deps
