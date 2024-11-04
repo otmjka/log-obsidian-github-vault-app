@@ -10,5 +10,15 @@ https://api.github.com/repos/otmjka/log-content/git/trees/main?recursive=1
 
 https://nextjs.org/docs/app/building-your-application/deploying#docker-image
 
+```
 docker compose -f docker/development/compose.yaml up
 docker compose -f docker/production/compose.yaml up
+
+docker build -t b-log .
+docker build --platform=linux/amd64 -t b-log .
+docker run -e PORT=80 -p 80:80 b-log:latest
+```
+
+## issues
+
+--platform=linux/amd64

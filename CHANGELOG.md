@@ -16,3 +16,9 @@ WIP [# 2]
 `production` branch
 github action on push to `production` branch
 deploy to aws
+
+WIP [# 3]
+
+vpc, sg, alb
+--platform=linux/amd64
+terraform scripts

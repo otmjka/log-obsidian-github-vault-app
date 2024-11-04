@@ -1,0 +1,53 @@
+{
+  "containerDefinitions": [
+    {
+      "name": "b-log-app",
+      "image": "762233768038.dkr.ecr.eu-north-1.amazonaws.com/akjmto/log-blog",
+      "cpu": 0,
+      "portMappings": [
+        {
+          "containerPort": 80,
+          "hostPort": 80,
+          "protocol": "tcp"
+        }
+      ],
+      "essential": true,
+      "environment": [
+        {
+          "name": "PORT",
+          "value": "80"
+        }
+      ],
+      "mountPoints": [],
+      "volumesFrom": [],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/b_log_app",
+          "awslogs-region": "eu-north-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
+      "systemControls": []
+    }
+  ],
+  "family": "b-log-app-task-defenition-family",
+  "executionRoleArn": "arn:aws:iam::762233768038:role/aws-node-app-ecs-task-execution-role",
+  "networkMode": "awsvpc",
+  "volumes": [],
+
+  "placementConstraints": [],
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "512",
+  "memory": "1024",
+  "runtimePlatform": {
+    "cpuArchitecture": "X86_64",
+    "operatingSystemFamily": "LINUX"
+  },
+  "tags": [
+    {
+      "key": "Name",
+      "value": "log-blog-task"
+    }
+  ]
+}
